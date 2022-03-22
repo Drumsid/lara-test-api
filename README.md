@@ -5,6 +5,7 @@
 
 `make install`
 
+для Windows этого достаточно, на linux нужно добавить права
 
 Если проблемы с доступом к `/storage/logs` или `/storage/frameworks`, добавляем на эти папки права:
 
