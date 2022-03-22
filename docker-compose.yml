@@ -1,0 +1,23 @@
+version: '3.0'
+
+services:
+  nginx:
+    build:
+      context: ./docker/nginx
+    volumes:
+      - .:/template
+    container_name: l-nginx
+    depends_on:
+      - php-fpm
+    restart: always
+    ports:
+      - "8077:80"
+
+  php-fpm:
+    build:
+      context: ./docker/php-fpm
+    volumes:
+      - .:/template
+    restart: always
+    container_name: l-php-fpm
+
