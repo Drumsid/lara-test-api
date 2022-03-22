@@ -11,7 +11,7 @@ services:
       - php-fpm
     restart: always
     ports:
-      - "8077:80"
+      - "8089:80"
 
   php-fpm:
     build:
