@@ -16,14 +16,20 @@
 ## Возможные проблемы
 
 Проблемы с Laravel с доступом `/storage/logs` или `/storage/frameworks`, добавляем на эти папки права:
+
 Заходим в корень проекта пишем:
+
 `sudo chmod -R 775 storage`
+
 `sudo chmod -R ugo+rw storage`
 
 далее:
 
 `sudo chown -R www-data:www-data ./storage/logs/`
+
 `sudo chown -R www-data:www-data ./storage/framework/`
+
 `sudo chown -R www-data:www-data ./bootstrap/cache`
+
 `sudo chmod -R 775 ./bootstrap/cache`
 
