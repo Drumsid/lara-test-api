@@ -3,21 +3,16 @@
 
 `make build`
 
-Добавляем права при необходимоста на папку `storage`, описание в разделе `Возможные проблемы`
-
-Проверяем в браузере [localhost:8077](http://localhost:8077/)
+`make install`
 
 
-## Конфиг
-* **php** = 8.0-fpm 
-* **nginx** = 1.17
-
-
-## Возможные проблемы
-
-Проблемы с Laravel с доступом `/storage/logs` или `/storage/frameworks`, добавляем на эти папки права:
+Если проблемы с доступом к `/storage/logs` или `/storage/frameworks`, добавляем на эти папки права:
 
 Заходим в корень проекта пишем:
+
+`sudo chown -R $USER:$USER .`
+
+`sudo chmod -R 775 .`
 
 `sudo chmod -R 775 storage`
 
@@ -32,4 +27,12 @@
 `sudo chown -R www-data:www-data ./bootstrap/cache`
 
 `sudo chmod -R 775 ./bootstrap/cache`
+
+
+Проверяем в браузере [localhost:8089](http://localhost:8089/)
+
+
+## Конфиг Docker
+* **php** = 8.0-fpm
+* **nginx** = 1.17
 

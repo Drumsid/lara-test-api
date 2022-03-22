@@ -8,7 +8,9 @@ stop:
 
 #запуск композера внутри докера
 install:
-	docker exec -it l-php-fpm composer install
+	composer install
+	cp -n .env.example .env || true
+	php artisan key:generate
 
 #заходим в bash
 bash:
