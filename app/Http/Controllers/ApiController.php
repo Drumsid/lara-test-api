@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use App\Rules\Luna;
 
-class TestController extends Controller
+class ApiController extends Controller
 {
     public function post(Request $request)
     {
@@ -61,7 +61,7 @@ class TestController extends Controller
 
     public function getPublicKey()
     {
-        $contentsPublicKey = file_get_contents(__DIR__ .'/../../../docker/ssh/public.crt');
+        $contentsPublicKey = file_get_contents(__DIR__ . env('PATH_TO_PUBLIC_KEY'));
         return openssl_get_publickey($contentsPublicKey);
     }
 

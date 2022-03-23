@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,4 @@ use App\Http\Controllers\TestController;
 //    return $request->user();
 //});
 
-Route::post('/post', [TestController::class, 'post']);
+Route::post('/post', [ApiController::class, 'post']);
