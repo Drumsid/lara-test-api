@@ -25,7 +25,7 @@ class TestController extends Controller
                 'code' => 422,
                 'error' => $validator->getMessageBag(),
             ];
-            return response()->json($json, 422);
+            return response()->json($json, 422)->header('Content-Type', 'application/json');
         }
 
         $apiData = $validator->validated();
@@ -38,10 +38,11 @@ class TestController extends Controller
 
         $response = [
             'pan' => $this->cutNumCard($apiData['pan']),
+//            возможно лишнее, вешать маску на токен
             'token' => $this->cutToken($base64Token),
         ];
         Log::channel('tokenAPI')->info($base64Token);
-        return response()->json($response, 201);
+        return response()->json($response, 201)->header('Content-Type', 'application/json');
     }
 
     public function cutNumCard($num)

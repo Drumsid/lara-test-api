@@ -5,9 +5,9 @@
 
 `make install`
 
-для Windows этого достаточно, на linux нужно добавить права
+для Windows этого достаточно, на linux нужно добавить права папкам:
 
-Если проблемы с доступом к `/storage/logs` или `/storage/frameworks`, добавляем на эти папки права:
+ `/storage/logs` и `/storage/frameworks` и `/bootstrap/cache`
 
 Заходим в корень проекта пишем:
 
